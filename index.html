@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WallStreet Athens</title>
+    <link rel="icon" type="image/x-icon" href="/images/XOM.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            max-width: 100%;
+            overflow-x: hidden;
+            text-align: center;
+        }
+
+        header {
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 20px;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .tour-container {
+            width: 80%;
+            max-width: 900px;
+            margin-bottom: 20px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 40px;
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            aspect-ratio: 4 / 3;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Lightbox με scaling */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .lightbox img {
+            max-width: 90vw;
+            max-height: 90vh;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            border-radius: 10px;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+        }
+
+
+        .lightbox:target {
+            display: flex;
+        }
+
+        .info-map-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 80%;
+            max-width: 900px;
+        }
+
+        .store-info,
+        .map-container {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .social-menu {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .fa-facebook,
+        .fa-instagram {
+            font-size: 50px;
+        }
+
+        .button-5 {
+            background-color: #fa6400;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .button-5:hover {
+            background-color: #fb8332;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.8em;
+        }
+
+        @media (max-width: 768px) {
+            .info-map-container {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>WallStreet Athens</h1>
+    </header>
+
+    <main>
+        <div class="tour-container">
+            <iframe src="https://kuula.co/share/collection/71fxd?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1" width="100%"
+                height="500px" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <div class="gallery">
+            <a href="#img1"><img src="IMAGES/WL1.jpg" alt=></a>
+            <a href="#img2"><img src="IMAGES/WL2.jpg" alt=></a>
+            <a href="#img3"><img src="IMAGES/WL3.jpg" alt=></a>
+            <a href="#img4"><img src="IMAGES/WL4.jpg" alt=></a>
+            <a href="#img5"><img src="IMAGES/WL5.jpg" alt=></a>
+            <a href="#img6"><img src="IMAGES/WL6.jpg" alt=></a>
+            <a href="#img7"><img src="IMAGES/WL7.jpg" alt=></a>
+            <!-- Πρόσθεσε όσες φωτογραφίες θέλεις -->
+        </div>
+
+        <!-- Lightbox modals -->
+        <div id="img1" class="lightbox">
+            <a href="#"><img src="IMAGES/WL1.jpg" alt="WL 1"></a>
+        </div>
+        <div id="img2" class="lightbox">
+            <a href="#"><img src="IMAGES/WL2.jpg" alt="WL 2"></a>
+        </div>
+        <div id="img3" class="lightbox">
+            <a href="#"><img src="IMAGES/WL3.jpg" alt="WL 3"></a>
+        </div>
+        <div id="img4" class="lightbox">
+            <a href="#"><img src="IMAGES/WL4.jpg" alt="WL 4"></a>
+        </div>
+        <div id="img5" class="lightbox">
+            <a href="#"><img src="IMAGES/WL5.jpg" alt="WL 5"></a>
+        </div>
+        <div id="img6" class="lightbox">
+            <a href="#"><img src="IMAGES/WL6.jpg" alt="WL 6"></a>
+        </div>
+        <div id="img7" class="lightbox">
+            <a href="#"><img src="IMAGES/WL7.jpg" alt="WL 7"></a>
+        </div>
+
+        <div class="info-map-container">
+            <div class="store-info">
+                <h2>WallStreet Athens</h2>
+                <p>Ελπίδος, Δημ. Γούναρη 2-4, Αγ. Παρασκευή 153 43</p>
+                <p>Τηλ: 210 600 3841</p>
+                <div class="social-menu">
+                    <a href="https://www.facebook.com/WallStreetBarAthens/?locale=el_GR" target="_blank"><i
+                            class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/wallstreet_athens/" target="_blank"><i
+                            class="fa-brands fa-instagram"></i></a>
+                    <button class="button-5" role="button"
+                        onclick="window.open('https://www.wallstreetathens.gr/menu/', '_blank')">MENU</button>
+                </div>
+
+                <div class="map-container">
+                    <h2>ΠΟΥ ΘΑ ΜΑΣ ΒΡΕΙΤΕ</h2>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3143.3895083270095!2d23.818636076031382!3d38.01469797192591!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a19907935ef501%3A0x241fb0a2983289fe!2sWallStreet%20Athens!5e0!3m2!1sen!2sgr!4v1746439851354!5m2!1sen!2sgr"
+                        width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+    </main>
+</body>
